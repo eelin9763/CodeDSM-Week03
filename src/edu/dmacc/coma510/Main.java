@@ -1,37 +1,40 @@
 package edu.dmacc.coma510;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Please enter first number: ");
-        double x = in.nextInt();
-        System.out.println("Please enter second number: ");
-        double y = in.nextInt();
-        System.out.println("Please enter third number: ");
-        double z = in.nextInt();
-        System.out.println(String.format("The average is: %f", ((x + y + z) / 3)));
+        double a = 10;
+        double b = 40;
+        double c = 50;
+        System.out.println(String.format("average of (%f, %f, %f) is: %f", a, b, c, avgOfThree(a, b, c)));
 
-        in.close();
+        double d = 1;
+        double e = 1;
+        double f = 7;
+        System.out.println(String.format("average of (%f, %f, %f) is: %.1f", d, e, f, avgOfThree2(d, e, f)));
 
-        double a = 5.3;
-        double b = 3.1;
-        double c = 8.0;
-        double smallestNum = Math.min(a, Math.min(b,c));
-        System.out.println(String.format("%.1f is the smallest number", smallestNum));
+        double g = 5.3;
+        double h = 3.1;
+        double i = 8.0;
+        System.out.println(String.format("smallest of (%f, %f, %f) is: %.1f", g, h, i, minOfThree(g, h, i)));
 
-        double d = 3.0;
-        double e = 1.0;
-        double f = 0.9;
-        double smallestNum2 = Math.min(d, Math.min(e,f));
-        System.out.println(String.format("%.1f is the smallest number", smallestNum2));
-
-
-
-
+        double j = 3.0;
+        double k = 1.0;
+        double l = 0.9;
+        System.out.println(String.format("smallest of (%f, %f, %f) is: %.1f", j, k, l, minOfThree2(j, k, l)));
     }
 
+        public static double avgOfThree(double a, double b, double c) {
+            return (a + b + c) / 3;
+    }
+        public static double avgOfThree2(double d, double e, double f) {
+            return (d + e + f) / 3;
+    }
+        public static double minOfThree(double g, double h, double i) {
+            return Math.min(Math.min(g, h), i);
+    }
+        public static double minOfThree2(double j, double k, double l) {
+            return Math.min(Math.min(j, k), l);
 
+    }
 }
